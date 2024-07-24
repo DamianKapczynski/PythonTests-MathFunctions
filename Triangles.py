@@ -1,9 +1,8 @@
 def get_triangle_field(base, height):
-
-    return(base * height * 1/2)
+    if (base > 0) & (height > 0):
+        return (base * height * 1 / 2)
+    else:
+        return "The inputs must be greater than 0"
 
 def is_this_triangle(a, b, c):
-    if (a+b > c) & (a+c > b) & (b+c > a):
-        return(True)
-    else:
-        return(False)
+    return (a + b > c) and (a + c > b) and (b + c > a) and (a > 0) and (b > 0) and (c > 0)

@@ -18,3 +18,16 @@ def get_triangle_field_using_Heron_formula(a, b, c):
         return math.sqrt(p*(p-a)*(p-b)*(p-c))
     else:
         return "This is not triangle"
+
+
+def is_equilateral_triangle(a, b, c):
+    return is_this_triangle(a, b, c) and (a == b) and (b == c)
+
+
+def is_isosceles_triangle(a, b, c):
+    return is_this_triangle(a, b, c) and ((a == b) or (b == c) or (a == c))
+
+
+def is_right_angled_triangle(a, b, c):
+    return is_this_triangle(a, b, c) and \
+        ((a ** 2 + b ** 2 == c ** 2) or (a ** 2 + c ** 2 == b ** 2) or (c ** 2 + b ** 2 == a ** 2))

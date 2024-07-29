@@ -21,7 +21,7 @@ def get_triangle_field_using_Heron_formula(a, b, c):
 
 
 def is_equilateral_triangle(a, b, c):
-    return is_this_triangle(a, b, c) and (a == b) and (b == c)
+    return is_this_triangle(a, b, c) and (a == b == c)
 
 
 def is_isosceles_triangle(a, b, c):
@@ -31,3 +31,17 @@ def is_isosceles_triangle(a, b, c):
 def is_right_angled_triangle(a, b, c):
     return is_this_triangle(a, b, c) and \
         ((a ** 2 + b ** 2 == c ** 2) or (a ** 2 + c ** 2 == b ** 2) or (c ** 2 + b ** 2 == a ** 2))
+
+
+def type_of_triangle(a, b, c):
+    if is_equilateral_triangle(a, b, c):
+        return('Equilateral triangle')
+    elif is_isosceles_triangle(a, b, c):
+        return('Isosceles triangle')
+    elif is_right_angled_triangle(a, b, c):
+        return('Right-angled triangle')
+    elif is_this_triangle(a, b, c):
+        return('Scalene triangle')
+    else:
+        return('This is not triangle')
+

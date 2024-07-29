@@ -25,6 +25,7 @@ def test_get_triangle_field_with_incorrect_inputs(b, h):
 def test_is_this_triangle():
     assert is_this_triangle(3, 4, 5) == True
     assert is_this_triangle(5, 5, 5) == True
+    assert is_this_triangle(5, 5.4, 6.159) == True
     assert is_this_triangle(10, 1, 1) == False
     assert is_this_triangle(1, 1, 2) == False
     assert is_this_triangle(0, 2, 3) == False
@@ -77,3 +78,27 @@ def test_is_right_angled_triangle():
     assert is_right_angled_triangle(-3, -5, -4) == False
     assert is_right_angled_triangle(5, 8, 10) == False
 
+
+@pytest.mark.parametrize(('a', 'b', 'c'), [(3, 3, 3), (math.pi, math.pi, math.pi)])
+def test_type_of_triangle_equilateral(a, b, c):
+    assert type_of_triangle(a, b, c) == 'Equilateral triangle'
+
+
+@pytest.mark.parametrize(('a', 'b', 'c'), [(3, 3, 2), (4, math.e, math.e)])
+def test_type_of_triangle_isosceles(a, b, c):
+    assert type_of_triangle(a, b, c) == 'Isosceles triangle'
+
+
+@pytest.mark.parametrize(('a', 'b', 'c'), [(4, 5, 3), (10, 8, 6)])
+def test_type_of_triangle_right_angled(a, b, c):
+    assert type_of_triangle(a, b, c) == 'Right-angled triangle'
+
+
+@pytest.mark.parametrize(('a', 'b', 'c'), [(4, 1, 4.5), (8, 5, 9)])
+def test_type_of_triangle_another(a, b, c):
+    assert type_of_triangle(a, b, c) == 'Scalene triangle'
+
+
+@pytest.mark.parametrize(('a', 'b', 'c'), [(4, -1, 6), (0, 5, 9)])
+def test_type_of_triangle_incorrect(a, b, c):
+    assert type_of_triangle(a, b, c) == 'This is not triangle'

@@ -2,7 +2,7 @@ import pytest
 from Triangles import *
 
 
-def test_get_triangle_field_with_proper_inputs():
+def test_get_triangle_field_with_correct_inputs():
     # try
     base = 15
     height = 10
@@ -31,3 +31,11 @@ def test_is_this_triangle():
     assert is_this_triangle(-1, 4, 5) == False
     assert is_this_triangle(4, -1, 5) == False
     assert is_this_triangle(4, 5, -1) == False
+
+
+def test_get_triangle_field_using_Heron_formula():
+    assert get_triangle_field_using_Heron_formula(3, 4, 5) == 6.0, "Test 1 failed"
+    assert get_triangle_field_using_Heron_formula(1, 1, 2) == 'This is not triangle'
+    assert math.isclose(get_triangle_field_using_Heron_formula(7, 10, 5), 16.24807680927192)
+    assert get_triangle_field_using_Heron_formula(-3, 4, 5) == 'This is not triangle'
+    assert get_triangle_field_using_Heron_formula(0, 4, 5) == 'This is not triangle'

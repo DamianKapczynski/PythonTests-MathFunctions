@@ -99,6 +99,6 @@ def test_type_of_triangle_another(a, b, c):
     assert type_of_triangle(a, b, c) == 'Scalene triangle'
 
 
-@pytest.mark.parametrize(('a', 'b', 'c'), [(4, -1, 6), (0, 5, 9)])
+@pytest.mark.parametrize(('a', 'b', 'c'), [(4, -1, 6), (0, 5, 9), (0, 0, 0)])
 def test_type_of_triangle_incorrect(a, b, c):
     assert type_of_triangle(a, b, c) == 'This is not triangle'

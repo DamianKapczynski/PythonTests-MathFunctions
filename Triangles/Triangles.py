@@ -44,4 +44,3 @@ def type_of_triangle(a, b, c):
         return('Scalene triangle')
     else:
         return('This is not triangle')
-

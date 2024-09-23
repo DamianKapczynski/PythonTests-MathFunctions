@@ -36,6 +36,12 @@ def test_is_this_triangle():
     assert is_this_triangle(4, 5, -1) == False
 
 
+def test_get_triangle_perimeter():
+    assert get_triangle_perimeter(4, 5, 8) == 17
+    assert get_triangle_perimeter(4.1, 5.58, 8) == 17.68
+    assert get_triangle_perimeter(0, 8, 9) == 'This is not triangle'
+    assert get_triangle_perimeter(1, -8, 9) == 'This is not triangle'
+
 def test_get_triangle_field_using_Heron_formula():
     assert get_triangle_field_using_Heron_formula(3, 4, 5) == 6.0
     assert get_triangle_field_using_Heron_formula(1, 1, 2) == 'This is not triangle'

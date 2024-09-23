@@ -12,6 +12,13 @@ def is_this_triangle(a, b, c):
     return (a + b > c) and (a + c > b) and (b + c > a) and (a > 0) and (b > 0) and (c > 0)
 
 
+def get_triangle_perimeter(a, b, c):
+    if is_this_triangle(a, b, c):
+        return a + b + c
+    else:
+        return "This is not triangle"
+
+
 def get_triangle_field_using_Heron_formula(a, b, c):
     if is_this_triangle(a, b, c):
         p = (a+b+c)/2
